@@ -21,6 +21,7 @@ namespace BlackScreenApp
     {
         public Window1()
         {
+            this.Topmost = true;            
             InitializeComponent();
         }
     }
