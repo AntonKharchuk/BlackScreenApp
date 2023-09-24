@@ -99,7 +99,7 @@ namespace BlackScreenApp
             SetMainButtonImage(Constants.FistImageName);
 
             _countdownTimer.Stop();
-            Window1 window1 = new Window1();
+            Window2 window1 = new Window2();
 
             window1.Closed += OnWindow1Closed;
 
