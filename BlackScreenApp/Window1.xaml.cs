@@ -24,5 +24,15 @@ namespace BlackScreenApp
             this.Topmost = true;            
             InitializeComponent();
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Check if the Escape key (Key.Escape) was pressed
+            if (e.Key == Key.Escape)
+            {
+                // Close the window
+                Close();
+            }
+        }
     }
 }
