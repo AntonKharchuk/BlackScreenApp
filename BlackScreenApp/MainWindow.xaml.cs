@@ -100,9 +100,18 @@ namespace BlackScreenApp
 
             _countdownTimer.Stop();
             Window1 window1 = new Window1();
+
+            window1.Closed += OnWindow1Closed;
+
             window1.Show();
             await Task.Delay(_deleyMiliseconds);
-            window1.Close();
+            if (window1.IsActive)
+                window1.Close();
+            window1.Closed -= OnWindow1Closed;
+        }
+
+        private void OnWindow1Closed(object sender, EventArgs e)
+        {
             _countdownDuration = TimeSpan.FromMinutes(_numOfDurationMinutes);
             _countdownTimer.Start();
 
